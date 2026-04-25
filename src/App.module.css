@@ -1,0 +1,31 @@
+.app {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--bg-primary);
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* Mobile: hide sidebar by default */
+@media (max-width: 640px) {
+  .app .sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 100;
+    height: 100%;
+    transition: left 0.25s ease;
+    box-shadow: var(--shadow);
+  }
+
+  .app.sidebarOpen .sidebar {
+    left: 0;
+  }
+}
