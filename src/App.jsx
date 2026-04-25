@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import Sidebar from './components/Sidebar'
 import Header from './components/Header'
 import ChatArea from './components/ChatArea'
@@ -66,6 +67,7 @@ export default function App() {
         />
         <ChatInput onSend={sendMessage} loading={loading} />
       </div>
+      <Analytics />
     </div>
   )
 }
